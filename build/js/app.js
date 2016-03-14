@@ -1,3 +1,11 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+exports.Card = function(status, name, path) {
+  this.status = status;
+  this.name = name;
+  this.path = path;
+};
+
+},{}],2:[function(require,module,exports){
 var Card = require("./Card.js").Card;
 
 exports.Game = function(player) {
@@ -71,3 +79,33 @@ exports.Game.prototype.gameEnd = function() {
     return endGame;
   }
 };
+
+},{"./Card.js":1}],3:[function(require,module,exports){
+exports.Player = function(name) {
+  this.name = name;
+  this.turn_count = 0;
+};
+
+},{}],4:[function(require,module,exports){
+var Game = require('./../js/Game.js').Game;
+var Card = require('./../js/Card.js').Card;
+var Player = require('./../js/Player.js').Player;
+
+$(document).ready(function(){
+  event.preventDefault();
+  $("#player_input").submit(function(event){
+  var player = $('input#player').val();
+  console.log(player);
+  var new_player = new Player(player);
+  $("#player_input").hide();
+  $("#card_display").show();
+  });
+
+
+  // foreach(item in array){
+  //   append(divname)
+  //   divname++
+  // }
+});
+
+},{"./../js/Card.js":1,"./../js/Game.js":2,"./../js/Player.js":3}]},{},[4]);
