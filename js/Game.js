@@ -6,7 +6,7 @@ exports.Game = function(player) {
 };
 
 exports.Game.prototype.setUp = function() {
-  var card1 = new Card("active", "banana", "../img/banana.png");
+  var card1 = new Card("active", "banana", "./memory/img/banana.png");
   var card2 = new Card("active", "banana", "../img/banana.png");
   var card3 = new Card("active", "grape", "../img/grape.gif");
   var card4 = new Card("active", "grape", "../img/grape.gif");
@@ -60,7 +60,7 @@ exports.Game.prototype.gameEnd = function() {
         count ++;
     }
   });
-  
+
   if (count === cards.length()) {
     endGame = "victory";
     return endGame;

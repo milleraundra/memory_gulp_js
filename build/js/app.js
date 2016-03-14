@@ -14,7 +14,7 @@ exports.Game = function(player) {
 };
 
 exports.Game.prototype.setUp = function() {
-  var card1 = new Card("active", "banana", "../img/banana.png");
+  var card1 = new Card("active", "banana", "./memory/img/banana.png");
   var card2 = new Card("active", "banana", "../img/banana.png");
   var card3 = new Card("active", "grape", "../img/grape.gif");
   var card4 = new Card("active", "grape", "../img/grape.gif");
@@ -68,7 +68,7 @@ exports.Game.prototype.gameEnd = function() {
         count ++;
     }
   });
-  
+
   if (count === cards.length()) {
     endGame = "victory";
     return endGame;
@@ -93,20 +93,22 @@ var Player = require('./../js/Player.js').Player;
 
 $(document).ready(function(){
   $("#player_form").submit(function(event){
-
+  event.preventDefault();
   var player = $('input#player').val();
-  console.log(player);
   var new_player = new Player(player);
+  var new_game = new Game(new_player);
+  new_game.setUp();
+  var cards = new_game.cards;
   $("#player_input").hide();
   $("#card_display").show();
-  event.preventDefault();
+  cards.forEach(function(card){
+    console.log(card);
+    $("#1").append("<img src=" + card.path + "/>")
+  });
+
   });
 
 
-  // foreach(item in array){
-  //   append(divname)
-  //   divname++
-  // }
 });
 
 },{"./../js/Card.js":1,"./../js/Game.js":2,"./../js/Player.js":3}]},{},[4]);
