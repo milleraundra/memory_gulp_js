@@ -17,7 +17,21 @@ exports.Game.prototype.setUp = function() {
 
   this.cards.push(card1, card2, card3, card4, card5, card6, card7, card8);
 
-  this.cards.sort((Math.round(Math.random())-0.5));
+  this.cards = cardRandomize(this.cards);
 
   return this.cards;
+}
+
+cardRandomize = function(arr) {
+  var i = 0;
+  var j = 0;
+  var temp = null;
+
+  for (i = arr.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  return arr;
 }
