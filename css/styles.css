@@ -5,6 +5,6 @@
   border: 10px solid white;
 }
 
-.card_display {
+#card_display {
   display: none;
 }

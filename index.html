@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css" media="screen" title="no title" charset="utf-8">
-    <script   src="https://code.jquery.com/jquery-1.12.1.js"   integrity="sha256-VuhDpmsr9xiKwvTIHfYWCIQ84US9WqZsLfR4P7qF6O8="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.1.js"   integrity="sha256-VuhDpmsr9xiKwvTIHfYWCIQ84US9WqZsLfR4P7qF6O8="   crossorigin="anonymous"></script>
     <script src="./build/js/app.js"></script>
     <meta charset="utf-8">
     <title>Memory Game</title>
@@ -12,13 +12,15 @@
 
     <div class="container">
       <h1>Memory Game</h1>
-      <form id="player_input">
-        <label for="player_name">Player Name:</label>
-        <input id="player" type="text" name="player_name">
-        <button type="submit">Go!</button>
-      </form>
+      <div id="player_input">
+        <form id="player_form">
+          <label for="player_name">Player Name:</label>
+          <input id="player" type="text" name="player_name">
+          <button type="submit">Go!</button>
+        </form>
+      </div>
 
-      <div class="card_display">
+      <div id="card_display">
         <div class="row">
           <div class="col-md-2 col-md-offset-1">
             <div class="card" id="1">
