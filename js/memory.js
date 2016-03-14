@@ -3,6 +3,7 @@ var Card = require('./../js/Card.js').Card;
 var Player = require('./../js/Player.js').Player;
 
 $(document).ready(function(){
+//player enters name
   $("#player_form").submit(function(event){
   event.preventDefault();
   var player = $('input#player').val();
@@ -12,6 +13,7 @@ $(document).ready(function(){
   var cards = new_game.cards;
   $("#player_input").hide();
   $("#card_display").show();
+//INCOMPLETE must associate a card div with an image
   cards.forEach(function(card){
     console.log(card);
     $("#1").append("<img src=" + card.path + "/>")

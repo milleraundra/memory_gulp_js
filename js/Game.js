@@ -35,7 +35,7 @@ cardRandomize = function(arr) {
   }
   return arr;
 };
-
+// INCOMPLETE functions turn() and gameEnd() are untested
 exports.Game.prototype.turn = function(selection1, selection2) {
   if (selection1.name === selection2.name) {
     selection1.status = "inactive";
